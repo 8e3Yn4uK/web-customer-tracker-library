@@ -38,7 +38,7 @@ public class CustomerDAO implements ICustomerDAO {
         // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
         // save the customer
-        currentSession.save(theCustomer);
+        currentSession.saveOrUpdate(theCustomer);
     }
 
     @Override
