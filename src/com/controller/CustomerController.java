@@ -1,7 +1,7 @@
-package com.luv2code.springdemo.controller;
+package com.controller;
 
-import com.luv2code.springdemo.entity.Customer;
-import com.luv2code.springdemo.service.ICustomerService;
+import com.entity.Customer;
+import com.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

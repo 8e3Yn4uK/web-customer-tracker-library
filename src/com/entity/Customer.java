@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.entity;
+package com.entity;
 
 
 import javax.persistence.*;

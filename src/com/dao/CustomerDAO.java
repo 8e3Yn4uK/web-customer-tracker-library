@@ -1,6 +1,6 @@
-package com.luv2code.springdemo.dao;
+package com.dao;
 
-import com.luv2code.springdemo.entity.Customer;
+import com.entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

@@ -1,6 +1,6 @@
-package com.luv2code.springdemo.service;
+package com.service;
 
-import com.luv2code.springdemo.entity.Customer;
+import com.entity.Customer;
 
 import java.util.List;
 

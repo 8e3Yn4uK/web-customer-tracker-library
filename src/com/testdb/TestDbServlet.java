@@ -1,4 +1,4 @@
-package com.luv2code.testdb;
+package com.testdb;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
