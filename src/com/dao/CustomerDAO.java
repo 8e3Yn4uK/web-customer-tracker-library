@@ -40,4 +40,15 @@ public class CustomerDAO implements ICustomerDAO {
         // save the customer
         currentSession.save(theCustomer);
     }
+
+    @Override
+    public Customer getCustomer(int theId) {
+
+        // get the current hibernate session
+        Session currentSession = sessionFactory.getCurrentSession();
+
+        // getting the customer
+        Customer theCustomer = currentSession.get(Customer.class, theId);
+        return theCustomer;
+    }
 }
