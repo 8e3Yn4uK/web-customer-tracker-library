@@ -1,6 +1,7 @@
 package com.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,18 @@ public class CRMLoggingAspect {
     public void before(JoinPoint theJoinPoint){
         String method = theJoinPoint.getSignature().toShortString();
         myLogger.info("======> In @Before Calling method " + method);
+        Object[] args = theJoinPoint.getArgs();
+        for (Object tempArg : args){
+            myLogger.info("=====> arguments: " + tempArg);
+        }
+    }
+
+    @AfterReturning(pointcut = "com.aspect.PointcutExpressions.forAppFlow()",
+                    returning = "theResult")
+    public void afterReturning(JoinPoint theJoinPoint, Object theResult){
+        String method = theJoinPoint.getSignature().toShortString();
+        myLogger.info("======> In @AfterReturning from method " + method);
+        myLogger.info("=====> result: " + theResult);
     }
 
 }
