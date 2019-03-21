@@ -11,14 +11,18 @@ import org.aspectj.lang.annotation.Pointcut;
 public class PointcutExpressions {
 
     @Pointcut("execution(* com.controller.*.*(..))")
-    private void forControllerPackage(){}
+    private void forControllerPackage() {
+    }
 
     @Pointcut("execution(* com.dao.*.*(..))")
-    private void forDaoPackage(){}
+    private void forDaoPackage() {
+    }
 
     @Pointcut("execution(* com.service.*.*(..))")
-    private void forServicePackage(){}
+    private void forServicePackage() {
+    }
 
     @Pointcut("forControllerPackage() || forDaoPackage() || forServicePackage()")
-    public void forAppFlow(){}
+    public void forAppFlow() {
+    }
 }

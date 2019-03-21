@@ -19,18 +19,18 @@ public class CRMLoggingAspect {
     private Logger myLogger = Logger.getLogger(getClass().getName());
 
     @Before("com.aspect.PointcutExpressions.forAppFlow()")
-    public void before(JoinPoint theJoinPoint){
+    public void before(JoinPoint theJoinPoint) {
         String method = theJoinPoint.getSignature().toShortString();
         myLogger.info("======> In @Before Calling method " + method);
         Object[] args = theJoinPoint.getArgs();
-        for (Object tempArg : args){
+        for (Object tempArg : args) {
             myLogger.info("=====> arguments: " + tempArg);
         }
     }
 
     @AfterReturning(pointcut = "com.aspect.PointcutExpressions.forAppFlow()",
-                    returning = "theResult")
-    public void afterReturning(JoinPoint theJoinPoint, Object theResult){
+            returning = "theResult")
+    public void afterReturning(JoinPoint theJoinPoint, Object theResult) {
         String method = theJoinPoint.getSignature().toShortString();
         myLogger.info("======> In @AfterReturning from method " + method);
         myLogger.info("=====> result: " + theResult);

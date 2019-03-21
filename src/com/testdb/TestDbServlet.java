@@ -23,15 +23,14 @@ public class TestDbServlet extends HttpServlet {
         String jdbcUrl = "jdbc:mysql://localhost:3306/web_customer_tracker?useSSL=false&serverTimezone=UTC";
         String driver = "com.mysql.jdbc.Driver";
 
-        try{
+        try {
             PrintWriter out = response.getWriter();
             out.println("Connecting to database: " + jdbcUrl);
             Class.forName(driver);
-            Connection myConn = DriverManager.getConnection(jdbcUrl,user,pass);
+            Connection myConn = DriverManager.getConnection(jdbcUrl, user, pass);
             out.println("Success!");
             myConn.close();
-        }
-        catch (Exception exc){
+        } catch (Exception exc) {
             exc.printStackTrace();
             throw new ServletException(exc);
         }

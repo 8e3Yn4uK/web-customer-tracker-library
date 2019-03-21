@@ -22,7 +22,7 @@ public class CustomerController {
     private ICustomerService customerService;
 
     @GetMapping("/list")
-    public String listCustomers(Model theModel){
+    public String listCustomers(Model theModel) {
 
         // get customers from the service
         List<Customer> theCustomers = customerService.getCustomers();
@@ -32,7 +32,7 @@ public class CustomerController {
     }
 
     @GetMapping("/showFormForAdd")
-    public String showFormForAdd(Model theModel){
+    public String showFormForAdd(Model theModel) {
 
         // create model attribute to bind form data
         Customer theCustomer = new Customer();
@@ -41,7 +41,7 @@ public class CustomerController {
     }
 
     @PostMapping("/saveCustomer")
-    public String saveCustomer(@ModelAttribute("customer") Customer theCustomer){
+    public String saveCustomer(@ModelAttribute("customer") Customer theCustomer) {
 
         //save the customer using our service
         customerService.saveCustomer(theCustomer);
@@ -49,7 +49,7 @@ public class CustomerController {
     }
 
     @GetMapping("/showFormForUpdate")
-    public String showCustomerForUpdate(@RequestParam("customerId") int theId, Model theModel){
+    public String showCustomerForUpdate(@RequestParam("customerId") int theId, Model theModel) {
 
         // get the customer from our service
         Customer theCustomer = customerService.getCustomer(theId);
@@ -62,14 +62,14 @@ public class CustomerController {
     }
 
     @GetMapping("/delete")
-    public String deleteCustomer(@RequestParam("customerId") int theId){
+    public String deleteCustomer(@RequestParam("customerId") int theId) {
 
         customerService.deleteCustomer(theId);
         return "redirect:/customer/list";
     }
 
     @GetMapping("/search")
-    public String searchCustomers(@RequestParam("theSearchName") String theSearchName, Model theModel){
+    public String searchCustomers(@RequestParam("theSearchName") String theSearchName, Model theModel) {
 
         // search customers from the service
         List<Customer> theCustomers = customerService.searchCustomers(theSearchName);
